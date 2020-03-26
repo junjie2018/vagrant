@@ -1,0 +1,38 @@
+load '../../common/Configure.rb'
+load '../../Configurationd.rb'
+
+Vagrant.configure("2") do |config|
+
+    # clusterConfigure = Cluster.new
+    conf = Cluster.getConfiguration("master")
+
+    script = <<-SCRIPT
+    source /vagrant/software/jdk/init.sh
+    source /vagrant/software/ssh/init.sh
+    source /vagrant/software/go/init.sh
+    source /vagrant/software/syncd/init.sh
+    SCRIPT
+
+    (1..conf.vmCounts).each do |i|
+        config.vm.define "#{conf.vagrantTipPrefix}#{i}" do |node|
+            node.vm.box = "ubuntu/bionic"
+            node.vm.hostname="#{conf.hostnamePrefix}#{i}"
+            node.vm.network "private_network", ip: "#{conf.ipPrefix}.#{conf.ipStart + i}"
+      
+
+            # 执行执行，需要绕开两个provisoin间，环境变量不可见问题
+            node.vm.provision "shell", privileged: false, inline: script
+            node.vm.provision "shell", privileged: false, inline: "echo '#{Cluster.getHosts(conf.hostnamePrefix, i)}' | sudo tee /etc/hosts"
+        
+            # 设置同步目录
+            node.vm.synced_folder ".", "/vagrant"
+ 
+            # VirtaulBox相关配置
+            node.vm.provider "virtualbox" do |v|
+                v.name = "#{conf.hostnamePrefix}#{i}"
+                v.memory = conf.memorySize
+                v.cpus = 1
+            end
+        end
+    end
+end

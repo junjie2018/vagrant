@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<configuration>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>node1</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+
+    <!-- 我查看自己的日志，的确和作者描述的一样，需要尝试一下这个方法 -->
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>node1:8032</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>node1:8030</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.resource-tracker.address</name>
+        <value>node1:8031</value>
+    </property>
+</configuration>

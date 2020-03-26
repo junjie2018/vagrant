@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://node1/</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/home/vagrant/software/tmp</value>
+    </property>
+</configuration>

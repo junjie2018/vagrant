@@ -1,0 +1,50 @@
+load '../../common/Configure.rb'
+load '../Configuration.rb'
+
+Vagrant.configure("2") do |config|
+
+    # clusterConfigure = Cluster.new
+    conf = Cluster.getConfiguration("zookeeper")
+
+    script = <<-SCRIPT
+    source /vagrant/software/jdk/init.sh
+    source /vagrant/software/ssh/init.sh
+    source /vagrant/software/zookeeper/init.sh
+    SCRIPT
+
+    (1..conf.vmCounts).each do |i|
+        config.vm.define "#{conf.vagrantTipPrefix}#{i}" do |node|
+            node.vm.box = "ubuntu/bionic"
+            node.vm.hostname="#{conf.hostnamePrefix}#{i}"
+            node.vm.network "private_network", ip: "#{conf.ipPrefix}.#{conf.ipStart + i}"
+      
+
+            # 执行执行，需要绕开两个provisoin间，环境变量不可见问题
+            node.vm.provision "shell", privileged: false, inline: script
+            node.vm.provision "shell", privileged: false, inline: "echo '#{Cluster.getHosts(conf.hostnamePrefix, i)}' | sudo tee /etc/hosts"
+
+            # 创建myId信息
+            node.vm.provision "shell", privileged: false, inline: "echo '#{i}' | sudo tee /home/vagrant/data/zookeeper/myid"
+
+            # zoo.conf文件追加结点信息
+            servers = "\n\n\n"
+            for j in 1..conf.vmCounts
+                servers += "server.#{j}=#{conf.hostnamePrefix}#{j}:2888:3888\n"
+            end
+            node.vm.provision "shell", privileged: false, inline: "echo '#{servers}' | sudo tee -a /home/vagrant/software/zookeeper-3.4.5/conf/zoo.cfg"
+        
+            # 启动Zookeeper
+            node.vm.provision "shell", privileged: false, inline: "zkServer.sh start"
+
+            # 设置同步目录
+            node.vm.synced_folder ".", "/vagrant"
+ 
+            # VirtaulBox相关配置
+            node.vm.provider "virtualbox" do |v|
+                v.name = "#{conf.hostnamePrefix}#{i}"
+                v.memory = conf.memorySize
+                v.cpus = 1
+            end
+        end
+    end
+end
