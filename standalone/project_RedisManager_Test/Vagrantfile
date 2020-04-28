@@ -1,0 +1,25 @@
+Vagrant.configure("2") do |config|
+
+    script = <<-SCRIPT
+    source /vagrant/software/jdk/init.sh
+    source /vagrant/software/ssh/init.sh
+    SCRIPT
+
+    (conf.vmCounts.downto(1)).each do |i|
+        config.vm.define "#{conf.vagrantTipPrefix}#{i}" do |node|
+            node.vm.box = "ubuntu/bionic"
+            node.vm.hostname="#{conf.hostnamePrefix}#{i}"
+            node.vm.network "private_network", ip: "#{conf.ipPrefix}.#{conf.ipStart + i}"
+      
+            # 设置同步目录
+            node.vm.synced_folder ".", "/vagrant"
+ 
+            # VirtaulBox相关配置
+            node.vm.provider "virtualbox" do |v|
+                v.name = "#{conf.hostnamePrefix}#{i}"
+                v.memory = conf.memorySize
+                v.cpus = 1
+            end
+        end
+    end
+end

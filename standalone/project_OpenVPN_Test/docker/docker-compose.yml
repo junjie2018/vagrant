@@ -1,0 +1,17 @@
+version: '2'
+services:
+   ubuntu_001:
+      image: ubuntu/18.04_openssh
+      container_name: ubuntu_001
+      restart: always
+      tty: true
+      networks:
+         extnetwork:
+            ipv4_address: 192.167.100.29
+ 
+networks:
+   extnetwork:
+      ipam:
+         config:
+         - subnet: 192.167.100.0/24
+           gateway: 192.167.100.1

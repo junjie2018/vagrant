@@ -25,7 +25,7 @@
 # into the startup scripts (bin/hbase, etc.)
 
 # The java implementation to use.  Java 1.8+ required.
-export JAVA_HOME=/home/vagrant/software/jdk1.8.0_231
+export JAVA_HOME=/home/vagrant/software/jdk
 
 # Extra Java CLASSPATH elements.  Optional.
 # export HBASE_CLASSPATH=

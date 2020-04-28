@@ -51,7 +51,7 @@
 
 # The java implementation to use. By default, this environment
 # variable is REQUIRED on ALL platforms except OS X!
-export JAVA_HOME=/home/vagrant/software/jdk1.8.0_231
+export JAVA_HOME=/home/vagrant/software/jdk
 
 # Location of Hadoop.  By default, Hadoop will attempt to determine
 # this location based upon its execution path.

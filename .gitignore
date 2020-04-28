@@ -1,4 +1,5 @@
 **/*.tar.gz
 **/.vagrant
 **/*.zip
+**/*.tgz
 **/ubuntu-bionic-18.04-cloudimg-console.log

@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
     source /vagrant/software/ssh/init.sh
     source /vagrant/software/hadoop/init.sh
     source /vagrant/software/hbase/init.sh
+    # source /vagrant/software/phoenix/init.sh
     SCRIPT
 
     (conf.vmCounts.downto(1)).each do |i|
@@ -23,7 +24,7 @@ Vagrant.configure("2") do |config|
             # 执行执行，需要绕开两个provisoin间，环境变量不可见问题
             node.vm.provision "shell", privileged: false, inline: script
             node.vm.provision "shell", privileged: false, inline: "echo '#{Cluster.getHosts(conf.hostnamePrefix, i)}' | sudo tee /etc/hosts"
-            node.vm.provision "shell", privileged: false, inline: "echo '#{Cluster.getHostnames("hadoop")}' | sudo tee /home/vagrant/software/hbase-2.2.3/conf/regionservers"
+            node.vm.provision "shell", privileged: false, inline: "echo '#{Cluster.getHostnames("hadoop")}' | sudo tee /home/vagrant/software/hbase/conf/regionservers"
             
             if i == 1 then
                 node.vm.provision "shell", privileged: false, inline: "hadoop namenode -format"

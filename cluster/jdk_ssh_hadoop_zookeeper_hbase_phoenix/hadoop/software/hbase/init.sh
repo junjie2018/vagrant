@@ -16,7 +16,8 @@ mkdir -p ~/software/hbase
 # tar -zxvf /vagrant/software/hbase/hbase-1.3.0-bin.tar.gz -C ~/software/hbase --strip-components 1
 # tar -zxvf /vagrant/software/hbase/hbase-0.98.24-hadoop2-bin.tar.gz -C ~/software/hbase --strip-components 1
 # tar -zxvf /vagrant/software/hbase/hbase-2.2.3-bin.tar.gz -C ~/software/hbase --strip-components 1
-tar -zxvf /vagrant/software/hbase/hbase-2.0.0-bin.tar.gz -C ~/software/hbase --strip-components 1
+# tar -zxvf /vagrant/software/hbase/hbase-2.0.0-bin.tar.gz -C ~/software/hbase --strip-components 1
+tar -zxvf /vagrant/software/hbase/hbase-1.5.0-bin.tar.gz -C ~/software/hbase --strip-components 1
 
 
 # copy配置文件到指定位置

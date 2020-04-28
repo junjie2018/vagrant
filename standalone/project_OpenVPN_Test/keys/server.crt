@@ -1,0 +1,100 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=CN, ST=GuangDong, L=GuangZhou, O=Junjie, OU=Junjie, CN=Junjie CA/name=EasyRSA/emailAddress=812797569@qq.com
+        Validity
+            Not Before: Apr 16 06:04:43 2020 GMT
+            Not After : Apr 14 06:04:43 2030 GMT
+        Subject: C=CN, ST=GuangDong, L=GuangZhou, O=Junjie, OU=Junjie, CN=server/name=EasyRSA/emailAddress=812797569@qq.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:9e:7b:01:02:c2:d5:39:6b:e8:d6:a7:f8:cc:28:
+                    4f:90:a3:6f:94:e8:4e:d9:03:f4:34:f5:e2:ef:2b:
+                    0a:f1:b1:fb:4e:83:74:8f:e2:ad:d6:fe:2c:8b:cf:
+                    b2:9e:dd:17:48:2c:1e:c5:25:b2:7d:ec:50:71:85:
+                    04:cc:3b:1c:5f:fa:a6:2e:43:fd:ae:d7:6b:42:77:
+                    b6:82:a6:0a:14:4d:2f:20:7a:49:b5:3f:fe:c0:c5:
+                    58:cb:53:19:dc:a6:02:89:1c:95:72:08:1c:45:d1:
+                    bc:5b:a9:ea:14:c1:aa:13:c1:04:fa:c1:94:24:85:
+                    b7:a8:05:1c:47:12:2c:16:61:74:c1:1c:15:7e:9d:
+                    f9:29:2f:7d:09:f6:6d:03:65:37:f0:95:36:cd:dd:
+                    4e:b8:7a:b9:5a:01:a3:64:83:b3:6f:6a:88:33:b1:
+                    94:9f:5d:56:82:4c:9f:00:4d:a8:6d:5d:6c:5d:5a:
+                    d9:fd:f8:46:e1:66:8c:36:e1:ea:24:7e:ff:f1:67:
+                    25:70:66:e2:d7:2f:41:54:f4:b6:88:5f:0f:2c:13:
+                    41:ef:2f:7a:8e:48:67:85:25:0c:34:1f:f3:6a:76:
+                    c2:d9:ce:82:3c:44:59:f1:4d:df:c0:b1:5b:53:bc:
+                    3f:5b:60:c0:9c:4c:d4:56:fa:c1:bd:4f:d2:54:5a:
+                    3c:77
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Server
+            Netscape Comment: 
+                Easy-RSA Generated Server Certificate
+            X509v3 Subject Key Identifier: 
+                99:AC:73:B0:F0:E4:E4:2A:5A:55:9A:45:CE:97:D5:A4:69:2A:2A:C5
+            X509v3 Authority Key Identifier: 
+                keyid:3B:A3:00:A3:13:4F:0C:8C:37:61:51:CC:C7:DB:54:C6:DB:87:DA:37
+                DirName:/C=CN/ST=GuangDong/L=GuangZhou/O=Junjie/OU=Junjie/CN=Junjie CA/name=EasyRSA/emailAddress=812797569@qq.com
+                serial:57:8E:4F:2F:5E:80:C4:FE:97:43:A0:C1:45:C6:9E:86:87:09:D6:29
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:server
+    Signature Algorithm: sha256WithRSAEncryption
+         d6:b7:76:c5:8f:d2:da:2b:96:df:52:dc:df:89:51:c5:a8:b6:
+         9f:61:39:73:e7:b8:14:66:55:9d:01:e6:42:f5:71:61:21:b2:
+         55:f3:3e:2b:d5:52:80:13:15:ed:a4:52:d5:3d:d3:f2:45:53:
+         cb:42:69:09:f8:38:bb:2e:30:40:13:8f:27:5b:ac:6c:eb:31:
+         f0:07:33:ce:52:fe:04:91:20:16:fd:3f:53:e5:2a:d7:54:de:
+         92:9f:5c:94:f4:bb:29:5e:1b:5b:12:01:e6:a0:37:d5:65:5c:
+         cb:f6:86:36:2a:2f:35:9b:ca:35:85:bb:ee:b7:63:0a:09:a9:
+         3b:a6:7e:67:1d:8a:85:a4:06:52:29:d2:0a:91:ea:e4:89:25:
+         2f:3a:ec:a2:9e:1a:73:74:d5:f8:7a:93:fd:4a:c4:ab:fc:0a:
+         fa:63:6a:2d:99:6b:70:22:d7:5b:da:49:f7:56:39:0d:63:53:
+         f8:f1:01:49:70:a2:61:bd:4c:f5:0e:21:08:03:34:5f:d3:23:
+         57:c8:72:c3:bf:0b:88:08:60:f2:9b:47:2f:6f:c1:5f:a2:6d:
+         cc:a6:b0:2d:39:d4:3c:59:f6:e2:28:dd:75:86:4e:34:27:5d:
+         c6:bc:84:c4:23:12:fc:58:fa:07:6c:73:2b:b8:c9:72:be:5f:
+         9f:77:5a:b5
+-----BEGIN CERTIFICATE-----
+MIIFRTCCBC2gAwIBAgIBATANBgkqhkiG9w0BAQsFADCBnjELMAkGA1UEBhMCQ04x
+EjAQBgNVBAgTCUd1YW5nRG9uZzESMBAGA1UEBxMJR3VhbmdaaG91MQ8wDQYDVQQK
+EwZKdW5qaWUxDzANBgNVBAsTBkp1bmppZTESMBAGA1UEAxMJSnVuamllIENBMRAw
+DgYDVQQpEwdFYXN5UlNBMR8wHQYJKoZIhvcNAQkBFhA4MTI3OTc1NjlAcXEuY29t
+MB4XDTIwMDQxNjA2MDQ0M1oXDTMwMDQxNDA2MDQ0M1owgZsxCzAJBgNVBAYTAkNO
+MRIwEAYDVQQIEwlHdWFuZ0RvbmcxEjAQBgNVBAcTCUd1YW5nWmhvdTEPMA0GA1UE
+ChMGSnVuamllMQ8wDQYDVQQLEwZKdW5qaWUxDzANBgNVBAMTBnNlcnZlcjEQMA4G
+A1UEKRMHRWFzeVJTQTEfMB0GCSqGSIb3DQEJARYQODEyNzk3NTY5QHFxLmNvbTCC
+ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJ57AQLC1Tlr6Nan+MwoT5Cj
+b5ToTtkD9DT14u8rCvGx+06DdI/irdb+LIvPsp7dF0gsHsUlsn3sUHGFBMw7HF/6
+pi5D/a7Xa0J3toKmChRNLyB6SbU//sDFWMtTGdymAokclXIIHEXRvFup6hTBqhPB
+BPrBlCSFt6gFHEcSLBZhdMEcFX6d+SkvfQn2bQNlN/CVNs3dTrh6uVoBo2SDs29q
+iDOxlJ9dVoJMnwBNqG1dbF1a2f34RuFmjDbh6iR+//FnJXBm4tcvQVT0tohfDywT
+Qe8veo5IZ4UlDDQf82p2wtnOgjxEWfFN38CxW1O8P1tgwJxM1Fb6wb1P0lRaPHcC
+AwEAAaOCAY0wggGJMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgZAMDQGCWCG
+SAGG+EIBDQQnFiVFYXN5LVJTQSBHZW5lcmF0ZWQgU2VydmVyIENlcnRpZmljYXRl
+MB0GA1UdDgQWBBSZrHOw8OTkKlpVmkXOl9WkaSoqxTCB3gYDVR0jBIHWMIHTgBQ7
+owCjE08MjDdhUczH21TG24faN6GBpKSBoTCBnjELMAkGA1UEBhMCQ04xEjAQBgNV
+BAgTCUd1YW5nRG9uZzESMBAGA1UEBxMJR3VhbmdaaG91MQ8wDQYDVQQKEwZKdW5q
+aWUxDzANBgNVBAsTBkp1bmppZTESMBAGA1UEAxMJSnVuamllIENBMRAwDgYDVQQp
+EwdFYXN5UlNBMR8wHQYJKoZIhvcNAQkBFhA4MTI3OTc1NjlAcXEuY29tghRXjk8v
+XoDE/pdDoMFFxp6GhwnWKTATBgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMC
+BaAwEQYDVR0RBAowCIIGc2VydmVyMA0GCSqGSIb3DQEBCwUAA4IBAQDWt3bFj9La
+K5bfUtzfiVHFqLafYTlz57gUZlWdAeZC9XFhIbJV8z4r1VKAExXtpFLVPdPyRVPL
+QmkJ+Di7LjBAE48nW6xs6zHwBzPOUv4EkSAW/T9T5SrXVN6Sn1yU9LspXhtbEgHm
+oDfVZVzL9oY2Ki81m8o1hbvut2MKCak7pn5nHYqFpAZSKdIKkerkiSUvOuyinhpz
+dNX4epP9SsSr/Ar6Y2otmWtwItdb2kn3VjkNY1P48QFJcKJhvUz1DiEIAzRf0yNX
+yHLDvwuICGDym0cvb8Ffom3MprAtOdQ8WfbiKN11hk40J13GvITEIxL8WPoHbHMr
+uMlyvl+fd1q1
+-----END CERTIFICATE-----
