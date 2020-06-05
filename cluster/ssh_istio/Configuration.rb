@@ -5,9 +5,9 @@ class Cluster
             vmNamePrefixe = "istio",
             hostnamePrefix = "istio",
             vagrantTipPrefix = "istio_",
-            ipPrefix = "192.168.20",
+            ipPrefix = "172.17.29",
             ipStart = 100,
-            memorySize = 2048),
+            memorySize = 6144),
     ]
 
     def self.getConfiguration(projectName)
