@@ -1,26 +1,27 @@
 # 启动的机器数量
 $global_variable = 1
-$global_ip_prefix = "172.17.100"
-$global_node_name = "ansible"
 
 Vagrant.configure("2") do |config|
     (1..$global_variable).each do |i|
-         config.vm.define "#{$global_node_name}#{i}" do |node|
+         config.vm.define "node#{i}" do |node|
              node.vm.box = "ubuntu/bionic"
-             node.vm.hostname="#{$global_node_name}#{i}"
-             node.vm.network "private_network", ip: "#{$global_ip_prefix}.#{100+i}"
+             node.vm.hostname="node#{i}"
+             node.vm.network "private_network", ip: "192.168.56.#{100+i}"
 
              # 完成解压、设置环境、设置SSH等工作
+             # node.vm.provision "shell", privileged: false, path: "software/jdk/init.sh"
              node.vm.provision "shell", privileged: false, path: "software/ssh/init.sh"
+             # node.vm.provision "shell", privileged: false, path: "software/hadoop/init.sh"
+
 
              # 设置host文件
              hosts = "0.0.0.0\tlocalhost\n"
              hosts = ""
              for j in 1..$global_variable
                 if j == i then
-                    hosts += "0.0.0.0\t#{$global_node_name}#{j}\n"
+                    hosts += "0.0.0.0\tnode#{j}\n"
                 else
-                    hosts += "#{$global_ip_prefix}.#{100 + j}\t#{$global_node_name}#{j}\n"
+                    hosts += "192.168.56.#{100 + j}\tnode#{j}\n"
                 end
              end
              node.vm.provision "shell", privileged: false, inline: "echo '#{hosts}' | sudo tee /etc/hosts"
@@ -30,8 +31,8 @@ Vagrant.configure("2") do |config|
  
              # VirtaulBox相关配置
              node.vm.provider "virtualbox" do |v|
-                 v.name = "#{$global_node_name}#{i}"
-                 v.memory = 6144
+                 v.name = "node#{i}"
+                 v.memory = 2048
                  v.cpus = 1
              end
          end
