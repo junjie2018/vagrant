@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
     vmNamePrefix = "hexo"
     hostnamePrefix = "hexo"
 
-    ipPrefix = "172.17.50."
+    ipPrefix = "172.17.50"
     ipBegin = 100
 
     (1..vmCounts).each do |i|
